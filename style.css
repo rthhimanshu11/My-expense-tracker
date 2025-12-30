@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #6c5ce7;
+  --income-color: #27ae60;
+  --expense-color: #e74c3c;
+  --background-light: #f4f6f8;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #2d3436;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.tracker-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.balance-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.balance-section h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #636e72;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #2d3436;
+}
+
+/* Income & Expense summary */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  background: #fafafa;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  margin: 20px 0;
+}
+
+.summary-box {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+}
+
+.summary-box:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+.money {
+  font-size: 18px;
+  margin-top: 6px;
+  display: block;
+}
+
+.money.plus {
+  color: var(--income-color);
+}
+
+.money.minus {
+  color: var(--expense-color);
+}
+
+/* History list */
+.history h2 {
+  font-size: 18px;
+  margin: 25px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.transaction-list li {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 8px 0;
+  position: relative;
+  font-size: 16px;
+}
+
+.transaction-list li.plus {
+  border-right: 5px solid var(--income-color);
+}
+
+.transaction-list li.minus {
+  border-right: 5px solid var(--expense-color);
+}
+
+/* Delete button */
+.delete-btn {
+  cursor: pointer;
+  background-color: var(--expense-color);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 4px 8px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-110%, -50%);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.transaction-list li:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Add Transaction Form */
+.transaction-form h2 {
+  font-size: 18px;
+  margin: 20px 0 10px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #2d3436;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5a4ac4;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: none;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker (INR)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+    </header>
+
+    <main class="tracker-container">
+      <!-- Balance Section -->
+      <section class="balance-section">
+        <h2>Current Balance</h2>
+        <p id="balance" class="balance-amount">₹0.00</p>
+      </section>
+
+      <!-- Income and Expense -->
+      <section class="summary">
+        <div class="summary-box">
+          <h3>Income</h3>
+          <span id="money-plus" class="money plus">+₹0.00</span>
+        </div>
+        <div class="summary-box">
+          <h3>Expense</h3>
+          <span id="money-minus" class="money minus">-₹0.00</span>
+        </div>
+      </section>
+
+      <!-- Transaction History -->
+      <section class="history">
+        <h2>Transaction History</h2>
+        <ul id="list" class="transaction-list">
+          <!-- Example:
+          <li class="minus">
+            Groceries <span>-₹500</span><button class="delete-btn">x</button>
+          </li>
+          -->
+        </ul>
+      </section>
+
+      <!-- Add Transaction Form -->
+      <section class="transaction-form">
+        <h2>Add Transaction</h2>
+        <form id="form">
+          <div class="form-control">
+            <label for="text">Description</label>
+            <input type="text" id="text" placeholder="e.g. Salary, Food..." />
+          </div>
+          <div class="form-control">
+            <label for="amount">
+              Amount <small>(+ income, - expense)</small>
+            </label>
+            <input type="number" id="amount" placeholder="Enter amount in ₹..." />
+          </div>
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
